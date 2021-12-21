@@ -15,22 +15,28 @@ def funcRecorrerLista(_listanumeros=[]):
         cadena+=", "
     return cadena
 
-listaNumeros.sort()
-print(funcRecorrerLista(listaNumeros))
+# listaNumeros.sort()
+# print(funcRecorrerLista(listaNumeros))
 #recorrer lista y ordenarla
 
 #longitud array
-LongitudLista=lambda longitud:print(f"La longitud de la lista es: {longitud}")
-LongitudLista(len(listaNumeros))
+# LongitudLista=lambda longitud:print(f"La longitud de la lista es: {longitud}")
+# LongitudLista(len(listaNumeros))
 #longitud array
 
 #buscar numero y ver si esta en la lista
-NumeroBusqueda=int(input("Que numero quieres buscar?: "))
-ComprobarInt=isinstance(NumeroBusqueda,int)
-
-while not ComprobarInt or NumeroBusqueda<=0:
+try:
     NumeroBusqueda=int(input("Que numero quieres buscar?: "))
-else:
-    search=listaNumeros.index(NumeroBusqueda)
-    print(f"EL indice del numero que esta buscando es: {search}") 
+    ComprobarInt=isinstance(NumeroBusqueda,int)
+
+    while not ComprobarInt or NumeroBusqueda<=0:
+        NumeroBusqueda=int(input("Que numero quieres buscar?: "))
+    else:
+        try:
+            search=listaNumeros.index(NumeroBusqueda)
+            print(f"EL indice del numero que esta buscando es: {search}") 
+        except:
+            print("El numero no esta en la lista")
+except:
+    print("Captura un numero, no una letra")
 #buscar numero y ver si esta en la lista
